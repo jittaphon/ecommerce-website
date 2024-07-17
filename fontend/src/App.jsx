@@ -7,10 +7,13 @@ import Products from "./Component/Products/Products";
 import Blogs from "./Component/Blogs/Blogs";
 import Partners from "./Component/Partners/Partners";
 import Footer from "./Component/Footer/Footer";
-
+import Popup from "./Component/Popup/Popup";
 import Service from "./Component/Service/Service";
 import Banner from "./Component/Banner/Banner";
 import headphone from "../src/assets/headphone.png";
+import AOS, { refresh } from "aos";
+import "aos/dist/aos.css";
+import Aos from "aos";
 
 const BannerData = {
   discount: "30% OFF",
@@ -36,10 +39,26 @@ const BannerData2 = {
 };
 
 const App = () => {
+  const [orderPopup, setOrderPopup] = React.useState(false);
+
+  const handleOrderPopup = () => {
+    setOrderPopup(!orderPopup);
+  };
+
+  React.useEffect(() => {
+    Aos.init({
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100,
+      offset: 100,
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200 overflow-hidden">
-      <Navbar />
-      <Hero />
+      <Navbar handleOrderPopup={handleOrderPopup} />
+      <Hero handleOrderPopup={handleOrderPopup} />
       <Category />
       <Category2 />
       <Service />
@@ -49,6 +68,7 @@ const App = () => {
       <Blogs />
       <Partners />
       <Footer />
+      <Popup orderPopup={orderPopup} handleOrderPopup={handleOrderPopup} />
     </div>
   );
 };
