@@ -7,7 +7,12 @@ const ProductCard = ({ data }) => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap place-items-center ">
         {}
         {data.map((data) => (
-          <div keu={data.id} className="group">
+          <div
+            data-aos="fade-up"
+            data-aos-delay={data.aosDelay}
+            keu={data.id}
+            className="group"
+          >
             <div className="relative ">
               <img
                 src={data.img}

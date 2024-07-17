@@ -9,6 +9,7 @@ const BlogData = [
       "2022年7月より夏アニメ(7月〜9月)として放送されるアニメ作品の声優・スタッフ・PV・制作会社などの情報をまとめました",
     published: "Jan 20, 2024 by Dilshad",
     image: Img1,
+    aosDelay: "100",
   },
   {
     title: "【PV付き】夏アニメ情報まとめ! 2022年7月から放送される作品一覧",
@@ -16,6 +17,7 @@ const BlogData = [
       "2022年7月より夏アニメ(7月〜9月)として放送されるアニメ作品の声優・スタッフ・PV・制作会社などの情報をまとめました",
     published: "Jan 20, 2024 by Dilshad",
     image: Img1,
+    aosDelay: "200",
   },
   {
     title: "【PV付き】夏アニメ情報まとめ! 2022年7月から放送される作品一覧",
@@ -23,6 +25,7 @@ const BlogData = [
       "2022年7月より夏アニメ(7月〜9月)として放送されるアニメ作品の声優・スタッフ・PV・制作会社などの情報をまとめました",
     published: "Jan 20, 2024 by Dilshad",
     image: Img1,
+    aosDelay: "300",
   },
 ];
 
@@ -33,7 +36,12 @@ const Blogs = () => {
         <Heading title="Recent News" subtitle={"Explore Our Blogs"} />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 gap-y-8 sm:gap-4 md:gap-7">
           {BlogData.map((data) => (
-            <div key={data.title} className="bg-white dark:bg-gray-900">
+            <div
+              data-aos="fade-up"
+              data-aos-delay={data.aosDelay}
+              key={data.title}
+              className="bg-white dark:bg-gray-900"
+            >
               {}
               <div className="overflow-hidden rounded-2xl mb-2">
                 <img

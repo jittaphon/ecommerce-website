@@ -72,10 +72,19 @@ const Hero = ({ handleOrderPopup }) => {
                     >
                       {data.title}
                     </h1>
-                    <h1 className="text-5xl uppercase text0white dark:text-white/5 sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold">
+                    <h1
+                      data-aos="zoom-out"
+                      data-aos-duration="500"
+                      data-aos-once="true"
+                      className="text-5xl uppercase text0white dark:text-white/5 sm:text-[80px] md:text-[100px] xl:text-[150px] font-bold"
+                    >
                       {data.title2}
                     </h1>
-                    <div>
+                    <div
+                      data-aos="fade-up"
+                      data-aos-duration="500"
+                      data-aos-once="true"
+                    >
                       <Button
                         text="Shop by Category"
                         bgColor="bg-primary"
@@ -86,7 +95,12 @@ const Hero = ({ handleOrderPopup }) => {
                   </div>
                   {}
                   <div className="order-1 sm:order-2">
-                    <div>
+                    <div
+                      data-aos="zoom-in"
+                      data-aos-duration="500"
+                      data-aos-once="true"
+                      className="relative z-10"
+                    >
                       <img
                         src={data.img}
                         alt=""
